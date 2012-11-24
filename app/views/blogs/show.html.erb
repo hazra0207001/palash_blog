@@ -1,0 +1,20 @@
+<% @blog.each do |b|%>
+    <div class="blog">
+    <div class="blog_title "><%= b.title %></div>
+    <div class="blog_body "> <%= b.content %></div>
+    <%= link_to "Edit","blogs/edit/"+"?id="+b.id.to_s %>
+    <%= link_to"Delete","blogs/delete/"+"?id="+b.id.to_s %>
+    <%= link_to "New Comment","/comments/new/"+"?id="+b.id.to_s %>
+      <div class="blog">
+        <div class="blog_title " style="background: #5f9ea0">Comments </div>
+        <% count=0 %>
+     <% b.comments.each do|c| %>
+            <% count=count+1 %>
+     <div class="blog_body "> <%= c.blog_comment %></div>
+     <% end %>
+            <%= count %>
+      </div>
+      
+    </div>
+
+<% end %>

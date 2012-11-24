@@ -1,0 +1,6 @@
+<%= form_for :blog,:url => "/blogs/update" do |f| %>
+<%=f.text_field :title %> <br>
+<%=f.text_area :content%>
+<%= f.hidden_field :id %>
+<%=f.submit "Update" %>
+<% end %>

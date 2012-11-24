@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <li><%= link_to "Show", "/show" %></li>
+    <li><%= link_to "New","/new" %></li>
+    <li><%= link_to "Edit","/edit" %></li>
+  </ul>
+</nav>
+<% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+<% end %>
+
+

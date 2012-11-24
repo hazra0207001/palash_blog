@@ -1,0 +1,12 @@
+<%=form_for :book,:url=>"/books/update" do |f| %>
+
+<% Category.all.each do |category| %>
+    <%= check_box_tag "book[category_ids][]",category.id, @book.categories.include?(category) %>
+    <%= category.name %>
+<% end %>
+    
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.hidden_field :id %>
+<%= f.submit %>
+<% end %>

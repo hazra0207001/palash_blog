@@ -1,0 +1,24 @@
+<%  @book.each do |book| %>
+    
+    <table >
+      <tr>
+        <th>
+          Book Name
+        </th>
+        <th>
+          Category
+        </th>
+      </tr>
+      <tr>
+        <td><%= book.name %></td>
+        <% book.categories.each do |category| %>
+        <td><%= category.name %>
+        </td>
+        <% end %>
+      </tr>
+    </table>
+    <%= link_to "Edit","/books/edit/"+"?id="+book.id.to_s %>
+    <%=link_to "delete", "/books/delete"+"?id="+ book.id.to_s%>
+    
+<% end %>
+<%= flash[:notice] || flash[:alert] %>

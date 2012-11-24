@@ -1,0 +1,13 @@
+<%= form_for :book, :url => "/books/create" do |f| %>
+    <p>
+      <% Category.all.each do |c| %>
+        <%=check_box_tag "book[category_ids][]",c.id %>
+        <%= c.name %>
+      <% end %>
+    </p>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%=f.submit %>
+    </p>
+<% end %>

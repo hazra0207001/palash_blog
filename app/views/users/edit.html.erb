@@ -1,0 +1,12 @@
+<%=form_for :user,:url=>"/users/update" do|f| %>
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %><br>
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %> <br>
+    <%= f.label :email %>
+    <%= f.text_field :email %> <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.hidden_field :id %>
+    <%= f.submit %>
+<% end %>
